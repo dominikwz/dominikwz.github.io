@@ -39,6 +39,28 @@
             margin-bottom: 30px;
         }
 
+        /* Countdown */
+        .countdown {
+            text-align: center;
+            background: #2196F3;
+            color: white;
+            padding: 1rem;
+            margin: 0 auto 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .countdown h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .countdown span {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
         /* Hauptinhalt */
         main {
             padding: 1rem 2rem;
@@ -125,6 +147,11 @@
     <!-- Banner -->
     <div class="banner"></div>
 
+    <!-- Countdown -->
+    <div class="countdown">
+        <h2>Countdown zur Rallye: <span id="countdown-timer">00T 00:00:00</span></h2>
+    </div>
+
     <!-- Hauptinhalt -->
     <main>
         <div class="form-container">
@@ -163,21 +190,39 @@
     </footer>
 
     <script>
-        // JavaScript für das Formular
+        // Countdown-Funktion
+        function updateCountdown() {
+            const rallyeDate = new Date("2025-07-01T00:00:00").getTime();
+            const now = new Date().getTime();
+            const difference = rallyeDate - now;
+
+            if (difference <= 0) {
+                document.getElementById('countdown-timer').innerHTML = "Die Rallye hat begonnen!";
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown-timer').innerHTML =
+                `${days}T ${hours}:${minutes}:${seconds}`;
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Anmeldungserfolg und PDF-Download
         document.getElementById('registration-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Verhindert die Standard-Formularübertragung
+            event.preventDefault();
 
-            // Erfolgsmeldung in einem neuen Fenster (Popup) anzeigen
             alert("Deine Anmeldung war erfolgreich! Vielen Dank.");
-
-            // PDF-Download-Frage
             const wantsDownload = confirm("Möchtest du die Packliste und Sicherheitsvorkehrungen als PDF herunterladen?");
             if (wantsDownload) {
-                // Link zur PDF-Datei öffnen
                 window.open('packliste_sicherheitsvorkehrungen.pdf', '_blank');
             }
 
-            // Formular zurücksetzen (optional)
             document.getElementById('registration-form').reset();
         });
     </script>
