@@ -10,13 +10,13 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f8ff;
+            background-color: #f4f9fc;
             color: #333;
         }
 
-        /* Header-Stil */
+        /* Header */
         header {
-            background: linear-gradient(90deg, #4CAF50, #81c784);
+            background: linear-gradient(90deg, #4CAF50, #2196F3);
             color: white;
             text-align: center;
             padding: 2rem 1rem;
@@ -29,27 +29,38 @@
             font-size: 1.2rem;
         }
 
-        /* Hauptbereich */
+        /* Banner */
+        .banner {
+            width: 100%;
+            height: 200px;
+            background-image: url('https://source.unsplash.com/1600x400/?bike,outdoors');
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Hauptinhalt */
         main {
-            padding: 2rem;
+            padding: 1rem 2rem;
         }
         .form-container {
             background: white;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .form-container h2 {
             text-align: center;
-            color: #4CAF50;
+            color: #2196F3;
             margin-bottom: 1.5rem;
         }
         form label {
             display: block;
             font-weight: bold;
             margin: 1rem 0 0.5rem;
+            color: #4CAF50;
         }
         form input,
         form textarea,
@@ -63,7 +74,7 @@
         }
         form textarea {
             resize: vertical;
-            height: 100px;
+            height: 120px;
         }
         form button {
             background: #4CAF50;
@@ -79,7 +90,7 @@
 
         /* Footer */
         footer {
-            background: #333;
+            background: #2196F3;
             color: white;
             text-align: center;
             padding: 1rem;
@@ -108,8 +119,11 @@
     <!-- Header -->
     <header>
         <h1>E-Bike-Rallye 2024</h1>
-        <p>Erlebe ein unvergessliches Abenteuer auf zwei Rädern! Melde dich jetzt an.</p>
+        <p>Melde dich jetzt an und sei Teil eines unvergesslichen Abenteuers!</p>
     </header>
+
+    <!-- Banner -->
+    <div class="banner"></div>
 
     <!-- Hauptinhalt -->
     <main>
