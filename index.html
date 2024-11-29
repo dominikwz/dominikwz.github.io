@@ -88,6 +88,17 @@
             background: #45a049;
         }
 
+        /* Erfolgsmeldung */
+        .success-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
         /* Footer */
         footer {
             background: #2196F3;
@@ -129,7 +140,13 @@
     <main>
         <div class="form-container">
             <h2>Anmeldeformular</h2>
-            <form action="https://example.com/submit" method="post">
+
+            <!-- Erfolgsmeldung -->
+            <div class="success-message" id="success-message">
+                Deine Anmeldung war erfolgreich! Vielen Dank.
+            </div>
+
+            <form id="registration-form">
                 <label for="name">Vollständiger Name:</label>
                 <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
 
@@ -158,7 +175,20 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2024 Euer E-Bike-Rallye Team | Kontakt: e-bike.rallye@studiumgenerale.de</p>
+        <p>© 2024 E-Bike-Rallye Team | Kontakt: e-bike.rallye@studiumgenerale.de</p>
     </footer>
+
+    <script>
+        // JavaScript für das Formular
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Verhindert die Standard-Formularübertragung
+
+            // Erfolgsmeldung anzeigen
+            document.getElementById('success-message').style.display = 'block';
+
+            // Formular zurücksetzen (optional)
+            document.getElementById('registration-form').reset();
+        });
+    </script>
 </body>
 </html>
