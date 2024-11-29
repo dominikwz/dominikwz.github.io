@@ -36,7 +36,7 @@
             background-image: url('https://source.unsplash.com/1600x400/?bike,outdoors');
             background-size: cover;
             background-position: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem; /* Abstand verringert */
         }
 
         /* Hauptinhalt */
@@ -132,6 +132,9 @@
             <form action="https://example.com/submit" method="post">
                 <label for="name">Vollständiger Name:</label>
                 <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
+
+                <label for="age">Alter:</label>
+                <input type="number" id="age" name="age" placeholder="Ihr Alter" min="1" max="120" required>
 
                 <label for="email">E-Mail-Adresse:</label>
                 <input type="email" id="email" name="email" placeholder="max.mustermann@email.de" required>
