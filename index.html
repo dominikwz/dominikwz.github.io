@@ -36,7 +36,7 @@
             background-image: url('https://source.unsplash.com/1600x400/?bike,outdoors');
             background-size: cover;
             background-position: center;
-            margin-bottom: 30px; /* Abstand auf 30px gesetzt */
+            margin-bottom: 30px;
         }
 
         /* Hauptinhalt */
@@ -159,7 +159,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2024 Euer E-Bike-Rallye Team | Kontakt: e-bike.rallye@studiumgenerale.de</p>
+        <p>© 2024 E-Bike-Rallye Team | Kontakt: rallye@eventbeispiel.de</p>
     </footer>
 
     <script>
@@ -169,6 +169,13 @@
 
             // Erfolgsmeldung in einem neuen Fenster (Popup) anzeigen
             alert("Deine Anmeldung war erfolgreich! Vielen Dank.");
+
+            // PDF-Download-Frage
+            const wantsDownload = confirm("Möchtest du die Packliste und Sicherheitsvorkehrungen als PDF herunterladen?");
+            if (wantsDownload) {
+                // Link zur PDF-Datei öffnen
+                window.open('packliste_sicherheitsvorkehrungen.pdf', '_blank');
+            }
 
             // Formular zurücksetzen (optional)
             document.getElementById('registration-form').reset();
