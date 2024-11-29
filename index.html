@@ -109,6 +109,19 @@
         form button:hover {
             background: #45a049;
         }
+        form .checkbox-group {
+            display: flex;
+            flex-direction: column;
+        }
+        form .checkbox-group label {
+            font-weight: normal;
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        form .checkbox-group input {
+            margin-right: 10px;
+        }
 
         /* Footer */
         footer {
@@ -173,11 +186,18 @@
                 <label for="bike">E-Bike-Modell (falls bekannt):</label>
                 <input type="text" id="bike" name="bike" placeholder="Marke und Modell">
 
-                <label for="special">Besondere Wünsche oder Hinweise:</label>
-                <textarea id="special" name="special" placeholder="Z. B. vegetarische Verpflegung, Mietbedarf"></textarea>
+                <label>Sonderwünsche:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="vegetarian" value="Vegetarische Verpflegung"> Vegetarische Verpflegung</label>
+                    <label><input type="checkbox" name="bike-rental" value="Leih-E-Bike"> Leih-E-Bike</label>
+                </div>
 
-                <label for="emergency">Notfallkontakt (Name und Telefonnummer):</label>
-                <input type="text" id="emergency" name="emergency" placeholder="Maria Mustermann - +49 987 654 3210" required>
+                <label for="notes">Anmerkungen:</label>
+                <textarea id="notes" name="notes" placeholder="Weitere Hinweise oder Wünsche"></textarea>
+
+                <label>
+                    <input type="checkbox" id="terms" name="terms" required> Ich akzeptiere die <a href="#" target="_blank">Teilnahmebedingungen</a>.
+                </label>
 
                 <button type="submit">Jetzt anmelden</button>
             </form>
