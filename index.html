@@ -127,28 +127,17 @@
     color: #333;
     width: 100%; /* Volle Breite */
     white-space: nowrap; /* Text bleibt in einer Zeile */
+    margin-left: -5cm; /* Label 5 cm nach links */
 }
 
 /* Checkbox */
 .checkbox-group input[type="checkbox"] {
+    margin-left: 1.5cm; /* Checkbox 1,5 cm nach rechts */
     margin-right: 10px; /* Abstand zwischen Checkbox und Text */
-    transform: scale(1.2);
-    cursor: pointer;
+    transform: scale(1.2); /* Checkbox etwas größer */
+    cursor: pointer; /* Hand-Cursor bei Auswahl */
 }
 
-/* Checkboxen auf Höhe der Textfelder */
-.form-container {
-    display: grid;
-    grid-template-columns: 1fr; /* Einheitliches Layout */
-}
-
-input[type="text"], input[type="date"], input[type="email"], .checkbox-group label {
-    margin-left: 0; /* Einheitliche Ausrichtung links */
-}
-
-.checkbox-group {
-    margin-left: 0; /* Keine Extraverlagerung */
-}
 
 /* Mobile Anpassung */
 @media (max-width: 600px) {
