@@ -116,7 +116,8 @@
     flex-direction: column; /* Optionen untereinander */
     gap: 8px;
     margin-bottom: 1rem;
-    align-items: flex-start; /* Links ausgerichtet */
+    align-items: flex-start; /* Links ausgerichtet innerhalb der Gruppe */
+    margin-left: 5cm; /* 5 cm Abstand von der linken Seite */
 }
 
 .checkbox-group label {
@@ -124,13 +125,11 @@
     align-items: center; /* Text und Checkbox vertikal zentrieren */
     font-size: 1rem;
     color: #333;
-    width: 100%; /* Volle Breite ausnutzen */
     white-space: nowrap; /* Text bleibt in einer Zeile */
-    margin-left: -100px; /* Verschiebt die Labels nach links */
 }
 
 .checkbox-group input[type="checkbox"] {
-    margin-right: 6px; /* Reduzierter Abstand zwischen Checkbox und Text */
+    margin-right: 6px; /* Abstand zwischen Checkbox und Text */
     transform: scale(1.2);
     cursor: pointer;
 }
