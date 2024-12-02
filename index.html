@@ -116,22 +116,38 @@
     flex-direction: column; /* Optionen untereinander */
     gap: 8px;
     margin-bottom: 1rem;
-    align-items: flex-start; /* Links ausgerichtet innerhalb der Gruppe */
-    margin-left: 5cm; /* 5 cm Abstand von der linken Seite */
+    align-items: flex-start; /* Links ausgerichtet */
 }
 
+/* Checkbox-Label */
 .checkbox-group label {
-    display: inline-flex; /* Flexbox für Text und Checkbox */
-    align-items: center; /* Text und Checkbox vertikal zentrieren */
+    display: flex; /* Flexbox für Text und Checkbox */
+    align-items: center; /* Vertikale Ausrichtung */
     font-size: 1rem;
     color: #333;
+    width: 100%; /* Volle Breite */
     white-space: nowrap; /* Text bleibt in einer Zeile */
 }
 
+/* Checkbox */
 .checkbox-group input[type="checkbox"] {
-    margin-right: 6px; /* Abstand zwischen Checkbox und Text */
+    margin-right: 10px; /* Abstand zwischen Checkbox und Text */
     transform: scale(1.2);
     cursor: pointer;
+}
+
+/* Checkboxen auf Höhe der Textfelder */
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Einheitliches Layout */
+}
+
+input[type="text"], input[type="date"], input[type="email"], .checkbox-group label {
+    margin-left: 0; /* Einheitliche Ausrichtung links */
+}
+
+.checkbox-group {
+    margin-left: 0; /* Keine Extraverlagerung */
 }
 
 /* Mobile Anpassung */
