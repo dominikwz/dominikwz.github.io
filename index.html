@@ -109,17 +109,21 @@
         form button:hover {
             background: #45a049;
         }
+
+        /* Checkbox-Gruppe */
         .checkbox-group {
             display: flex;
             flex-direction: column;
             gap: 8px;
             margin-bottom: 1rem;
+            align-items: flex-start; /* Links ausgerichtet */
         }
         .checkbox-group label {
             display: flex;
             align-items: center;
             font-size: 1rem;
             color: #333;
+            width: 100%;
         }
         .checkbox-group input[type="checkbox"] {
             margin-right: 10px;
@@ -194,11 +198,11 @@
                 <div class="checkbox-group">
                     <label>
                         <input type="checkbox" name="vegetarian" value="Vegetarische Verpflegung">
-                        <span>Vegetarische Verpflegung</span>
+                        Vegetarische Verpflegung
                     </label>
                     <label>
                         <input type="checkbox" name="bike-rental" value="Leih-E-Bike">
-                        <span>Leih-E-Bike benötigt</span>
+                        Leih-E-Bike benötigt
                     </label>
                 </div>
 
@@ -234,7 +238,7 @@
 
             const days = Math.floor(difference / (1000 * 60 * 60 * 24));
             const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const minutes = Math.floor((difference % (1000 * 60)) / (1000 * 60));
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
             document.getElementById('countdown-timer').innerHTML =
