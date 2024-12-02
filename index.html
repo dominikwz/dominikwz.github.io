@@ -1,266 +1,88 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anmeldung zur E-Bike-Rallye 2024</title>
-    <style>
-        /* Allgemeine Stile */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f9fc;
-            color: #333;
-        }
+/* Grundlegende Stile */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
-        /* Header */
-        header {
-            background: linear-gradient(90deg, #4CAF50, #2196F3);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
-        header p {
-            font-size: 1.2rem;
-        }
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        /* Banner */
-        .banner {
-            width: 100%;
-            height: 200px;
-            background-image: url('https://source.unsplash.com/1600x400/?bike,outdoors');
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 30px;
-        }
+h1 {
+    text-align: center;
+    color: #333;
+}
 
-        /* Countdown */
-        .countdown {
-            text-align: center;
-            background: #2196F3;
-            color: white;
-            padding: 1rem;
-            margin: 0 auto 30px;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 600px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .countdown h2 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-        .countdown span {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #FFD700;
-        }
+/* Formular */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-        /* Hauptinhalt */
-        main {
-            padding: 1rem 2rem;
-        }
-        .form-container {
-            background: white;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .form-container h2 {
-            text-align: center;
-            color: #2196F3;
-            margin-bottom: 1.5rem;
-        }
-        form label {
-            display: block;
-            font-weight: bold;
-            margin: 1rem 0 0.5rem;
-            color: #4CAF50;
-        }
-        form input,
-        form textarea,
-        form button {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-        form textarea {
-            resize: vertical;
-            height: 120px;
-        }
-        form button {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: background 0.3s ease;
-        }
-        form button:hover {
-            background: #45a049;
-        }
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input, textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
 
 /* Checkbox-Gruppe */
 .checkbox-group {
     display: flex;
-    flex-direction: column; /* Optionen untereinander */
+    flex-direction: column;
     gap: 8px;
     margin-bottom: 1rem;
-    align-items: flex-start; /* Links ausgerichtet */
 }
 
-/* Checkbox-Label */
 .checkbox-group label {
-    display: flex; /* Flexbox für Text und Checkbox */
-    align-items: center; /* Vertikale Ausrichtung */
+    display: flex;
+    align-items: center;
     font-size: 1rem;
     color: #333;
-    width: 100%; /* Volle Breite */
-    white-space: nowrap; /* Text bleibt in einer Zeile */
-    margin-left: -5cm; /* Label 5 cm nach links */
+    width: 100%;
+    white-space: nowrap;
 }
 
-/* Checkbox */
+/* Checkboxen nach rechts verschieben */
 .checkbox-group input[type="checkbox"] {
-    margin-left: 1.5cm; /* Checkbox 1,5 cm nach rechts */
+    margin-left: 1.5cm; /* Verschiebt Checkboxen 5 cm nach rechts */
     margin-right: 10px; /* Abstand zwischen Checkbox und Text */
-    transform: scale(1.2); /* Checkbox etwas größer */
-    cursor: pointer; /* Hand-Cursor bei Auswahl */
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
-
-/* Mobile Anpassung */
-@media (max-width: 600px) {
-    .checkbox-group {
-        align-items: flex-start; /* Bleibt linksbündig auf mobilen Geräten */
-    }
+/* Countdown */
+#countdown {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    font-weight: bold;
 }
-
-        /* Medienanpassung */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            header p {
-                font-size: 1rem;
-            }
-            .form-container {
-                padding: 1.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <h1>E-Bike-Rallye 2024</h1>
-        <p>Melde dich jetzt an und sei Teil eines unvergesslichen Abenteuers!</p>
-    </header>
-
-    <!-- Banner -->
-    <div class="banner"></div>
-
-    <!-- Countdown -->
-    <div class="countdown">
-        <h2>Countdown zur Rallye: <span id="countdown-timer">00T 00:00:00</span></h2>
-    </div>
-
-    <!-- Hauptinhalt -->
-    <main>
-        <div class="form-container">
-            <h2>Anmeldeformular</h2>
-
-            <form id="registration-form">
-                <label for="name">Vollständiger Name:</label>
-                <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
-
-                <label for="dob">Geburtsdatum:</label>
-                <input type="date" id="dob" name="dob" required>
-
-                <label for="email">E-Mail-Adresse:</label>
-                <input type="email" id="email" name="email" placeholder="max.mustermann@email.de" required>
-
-                <label for="phone">Telefonnummer:</label>
-                <input type="tel" id="phone" name="phone" placeholder="+49 123 456 7890" required>
-
-                <label for="bike">E-Bike-Modell (falls bekannt):</label>
-                <input type="text" id="bike" name="bike" placeholder="Marke und Modell">
-
-                <label>Sonderwünsche:</label>
-                <div class="checkbox-group">
-                    <label>
-                        <input type="checkbox" name="vegetarian" value="Vegetarische Verpflegung">
-                        Vegetarische Verpflegung
-                    </label>
-                    <label>
-                        <input type="checkbox" name="bike-rental" value="Leih-E-Bike">
-                        Leih-E-Bike benötigt
-                    </label>
-                </div>
-
-                <label for="notes">Anmerkungen:</label>
-                <textarea id="notes" name="notes" placeholder="Weitere Hinweise oder Wünsche"></textarea>
-
-                <label>
-                    <input type="checkbox" id="terms" name="terms" required> Ich akzeptiere die <a href="#" target="_blank">Teilnahmebedingungen</a>.
-                </label>
-
-                <button type="submit">Jetzt anmelden</button>
-            </form>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 E-Bike-Rallye Team | Kontakt: rallye@eventbeispiel.de</p>
-    </footer>
-
-    <script>
-        // Countdown-Funktion
-        function updateCountdown() {
-            const rallyeDate = new Date("2025-07-01T00:00:00").getTime();
-            const now = new Date().getTime();
-            const difference = rallyeDate - now;
-
-            if (difference <= 0) {
-                document.getElementById('countdown-timer').innerHTML = "Die Rallye hat begonnen!";
-                clearInterval(countdownInterval);
-                return;
-            }
-
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            document.getElementById('countdown-timer').innerHTML =
-                `${days}T ${hours}:${minutes}:${seconds}`;
-        }
-
-        const countdownInterval = setInterval(updateCountdown, 1000);
-
-        // Anmeldungserfolg und PDF-Download
-        document.getElementById('registration-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            alert("Deine Anmeldung war erfolgreich! Vielen Dank.");
-            const wantsDownload = confirm("Möchtest du die Packliste und Sicherheitsvorkehrungen als PDF herunterladen?");
-            if (wantsDownload) {
-                window.open('packliste_sicherheitsvorkehrungen.pdf', '_blank');
-            }
-
-            document.getElementById('registration-form').reset();
-        });
-    </script>
-</body>
-</html>
