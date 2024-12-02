@@ -110,25 +110,26 @@
             background: #45a049;
         }
 
-       /* Checkbox-Gruppe */
+/* Checkbox-Gruppe */
 .checkbox-group {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Optionen untereinander */
     gap: 8px;
     margin-bottom: 1rem;
-    align-items: flex-start; /* Standard: linksbündig */
+    align-items: flex-start; /* Links ausgerichtet */
 }
 
 .checkbox-group label {
-    display: flex;
-    align-items: center;
+    display: inline-flex; /* Flexbox für Text und Checkbox */
+    align-items: center; /* Text und Checkbox vertikal zentrieren */
     font-size: 1rem;
     color: #333;
-    width: 100%;
+    width: 100%; /* Breite bleibt flexibel */
+    white-space: nowrap; /* Text bleibt in einer Zeile */
 }
 
 .checkbox-group input[type="checkbox"] {
-    margin-right: 10px;
+    margin-right: 10px; /* Abstand zwischen Checkbox und Text */
     transform: scale(1.2);
     cursor: pointer;
 }
@@ -136,11 +137,7 @@
 /* Mobile Anpassung */
 @media (max-width: 600px) {
     .checkbox-group {
-        align-items: center; /* Zentriert für mobile Ansicht */
-    }
-    .checkbox-group label {
-        justify-content: center;
-        width: auto; /* Verhindert zu viel Platz links/rechts */
+        align-items: flex-start; /* Bleibt linksbündig auf mobilen Geräten */
     }
 }
 
