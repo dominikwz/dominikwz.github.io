@@ -64,11 +64,24 @@
 
     .form-footer {
       margin-top: 15px;
+      text-align: left;
     }
 
     .form-footer .checkbox-label {
-      font-size: 12px;
+      font-size: 14px;
       color: #555;
+      display: flex;
+      align-items: center;
+    }
+
+    .form-footer .checkbox-label a {
+      color: #007bff;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+
+    .form-footer .checkbox-label a:hover {
+      text-decoration: underline;
     }
 
     .form-footer .submit-btn {
@@ -81,6 +94,7 @@
       border-radius: 5px;
       cursor: pointer;
       width: 100%;
+      margin-top: 10px;
     }
 
     .form-footer .submit-btn:hover {
@@ -97,7 +111,7 @@
 <body>
   <div class="form-container">
     <div class="form-title">E-Bike Rallye Anmeldung</div>
-    <form action="#" method="post">
+    <form id="registrationForm">
       <div class="form-group">
         <label for="first-name">Vorname:</label>
         <input type="text" id="first-name" name="first-name" required>
@@ -125,12 +139,28 @@
       <div class="form-footer">
         <label class="checkbox-label">
           <input type="checkbox" name="terms" required>
-          Ich akzeptiere die Teilnahmebedingungen
+          Ich akzeptiere die <a href="teilnahmebedingungen.pdf" target="_blank">Teilnahmebedingungen</a>.
         </label>
-        <button type="submit" class="submit-btn">Jetzt Anmelden</button>
+        <button type="button" class="submit-btn" onclick="handleSubmit()">Jetzt Anmelden</button>
         <div class="countdown">Anmeldeschluss in: 208 Tage</div>
       </div>
     </form>
   </div>
+
+  <script>
+    function handleSubmit() {
+      // Erfolgreichmeldung anzeigen
+      const isConfirmed = confirm(
+        "Anmeldung erfolgreich! Möchten Sie die Sicherheitsvorkehrungen und die Packliste als PDFs herunterladen?"
+      );
+
+      // Falls der Benutzer zustimmt, die PDFs laden
+      if (isConfirmed) {
+        // Links zu den PDF-Dateien (passen Sie diese URLs an)
+        window.open("sicherheitsvorkehrungen.pdf", "_blank");
+        window.open("packliste.pdf", "_blank");
+      }
+    }
+  </script>
 </body>
 </html>
