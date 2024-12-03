@@ -26,6 +26,7 @@
         h1 {
             text-align: center;
             color: #333;
+            margin-bottom: 20px;
         }
 
         /* Formular */
@@ -45,6 +46,7 @@
             font-size: 1rem;
             border: 1px solid #ccc;
             border-radius: 4px;
+            width: 100%;
         }
 
         textarea {
@@ -59,6 +61,7 @@
             border-radius: 4px;
             font-size: 1rem;
             cursor: pointer;
+            width: 100%;
         }
 
         button:hover {
@@ -71,6 +74,37 @@
             font-size: 1.2rem;
             margin-top: 20px;
             font-weight: bold;
+        }
+
+        /* Für Sonderwünsche Textfeld */
+        textarea#specialRequests {
+            width: 100%;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-group input {
+            margin-left: 5px;
+        }
+
+        /* Mobile Anpassungen */
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            button {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
