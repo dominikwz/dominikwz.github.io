@@ -141,7 +141,7 @@
           <input type="checkbox" name="terms" required>
           Ich akzeptiere die <a href="teilnahmebedingungen.pdf" target="_blank">Teilnahmebedingungen</a>.
         </label>
-        <button type="button" class="submit-btn" onclick="handleSubmit()">Jetzt Anmelden</button>
+        <button type="submit" class="submit-btn">Jetzt Anmelden</button>
         <div class="countdown">Anmeldeschluss wird berechnet...</div>
       </div>
     </form>
@@ -150,7 +150,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const countdownElement = document.querySelector(".countdown");
-      const deadlineDate = new Date("2025-07-06T23:59:59"); // Anmeldeschluss-Datum
+      const deadlineDate = new Date("2024-07-06T23:59:59"); // Anmeldeschluss-Datum
 
       function updateCountdown() {
         const now = new Date();
@@ -174,19 +174,25 @@
       setInterval(updateCountdown, 1000);
     });
 
-    function handleSubmit() {
-      // Erfolgreichmeldung anzeigen
-      const isConfirmed = confirm(
-        "Anmeldung erfolgreich! Möchten Sie die Sicherheitsvorkehrungen und die Packliste als PDFs herunterladen?"
-      );
+    document.getElementById("registrationForm").addEventListener("submit", (e) => {
+      e.preventDefault(); // Verhindert das normale Abschicken des Formulars
 
-      // Falls der Benutzer zustimmt, die PDFs laden
-      if (isConfirmed) {
-        // Links zu den PDF-Dateien (passen Sie diese URLs an)
-        window.open("sicherheitsvorkehrungen.pdf", "_blank");
-        window.open("packliste.pdf", "_blank");
+      const form = e.target;
+      if (form.checkValidity()) {
+        // Erfolgreichmeldung anzeigen
+        const isConfirmed = confirm(
+          "Anmeldung erfolgreich! Möchten Sie die Sicherheitsvorkehrungen und die Packliste als PDFs herunterladen?"
+        );
+
+        // Falls der Benutzer zustimmt, die PDFs laden
+        if (isConfirmed) {
+          window.open("sicherheitsvorkehrungen.pdf", "_blank");
+          window.open("packliste.pdf", "_blank");
+        }
+      } else {
+        alert("Bitte füllen Sie alle Pflichtfelder aus.");
       }
-    }
+    });
   </script>
 </body>
 </html>
