@@ -21,7 +21,7 @@
 
     .header-title {
       color: #ffffff;
-      font-size: 42px;
+      font-size: clamp(28px, 5vw, 42px); /* Dynamische Schriftgröße */
       font-weight: bold;
       margin-top: 0px;
       text-align: center;
@@ -31,8 +31,9 @@
     .main-container {
       display: flex;
       flex-wrap: wrap;
+      flex-direction: column; /* Default: übereinander angeordnete Elemente */
       justify-content: center;
-      align-items: safe;
+      align-items: center;
       gap: 20px;
       width: 100%;
       max-width: 1200px;
@@ -50,6 +51,7 @@
       padding: 15px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%; /* Füllt bei mobilen Geräten die Breite */
     }
 
     .info-section h3 {
@@ -106,11 +108,6 @@
       resize: none;
     }
 
-    .form-group input[type="checkbox"] {
-      width: auto;
-      margin-right: 10px;
-    }
-
     .form-footer {
       margin-top: 15px;
       text-align: left;
@@ -154,6 +151,39 @@
       font-size: 12px;
       color: #777;
       margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      .header-title {
+        font-size: clamp(24px, 6vw, 32px);
+      }
+
+      .main-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .info-section, .form-container {
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .form-footer .submit-btn {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .form-group input, .form-group textarea {
+        font-size: 12px;
+      }
+
+      .countdown {
+        font-size: 10px;
+      }
     }
   </style>
 </head>
