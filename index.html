@@ -16,6 +16,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
     }
 
     .form-container {
@@ -109,6 +110,18 @@
       color: #777;
       margin-top: 10px;
     }
+
+    .user-agent {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 12px;
+      color: #555;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 5px 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
   </style>
 </head>
 <body>
@@ -150,9 +163,12 @@
     </form>
   </div>
 
+  <div class="user-agent"></div>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const countdownElement = document.querySelector(".countdown");
+      const userAgentElement = document.querySelector(".user-agent");
       const deadlineDate = new Date("2025-07-06T23:59:59"); // Anmeldeschluss-Datum
 
       function updateCountdown() {
@@ -172,9 +188,18 @@
         countdownElement.textContent = `Anmeldeschluss in: ${days} Tage, ${hours} Stunden, ${minutes} Minuten, ${seconds} Sekunden`;
       }
 
+      function displayUserAgent() {
+        const userAgent = navigator.userAgent;
+        const isMobile = /Mobile|Android|iP(hone|od|ad)/.test(userAgent) ? "Mobiles Gerät" : "Desktop";
+        userAgentElement.textContent = `User Agent: ${userAgent} | Gerät: ${isMobile}`;
+      }
+
       // Initiale Berechnung und Intervall setzen
       updateCountdown();
       setInterval(updateCountdown, 1000);
+
+      // Anzeige des User Agents
+      displayUserAgent();
     });
 
     document.getElementById("registrationForm").addEventListener("submit", (e) => {
