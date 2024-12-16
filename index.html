@@ -14,8 +14,8 @@
       background-attachment: fixed;
       background-size: cover;
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      justify-content: flex-start;
+      align-items: center;
       flex-direction: column;
       padding: 20px;
       box-sizing: border-box;
@@ -37,6 +37,7 @@
       font-size: 32px;
       font-weight: bold;
       margin-top: 10px;
+      text-align: center;
     }
 
     .form-container {
@@ -177,7 +178,7 @@
 </head>
 <body>
   <div class="header">
-    <img src="banner.jpg" alt="E-Bike Rallye Banner">
+    <img src="banner.jpg" alt="E-Bike Rallye Banner" onerror="this.style.display='none';">
     <div class="header-title">Willkommen zur E-Bike Rallye!</div>
   </div>
 
@@ -248,4 +249,17 @@
         }
 
         const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeRemaining / (1000 * 60 *
+        const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
+
+        countdownElement.textContent = `Anmeldeschluss in: ${days} Tagen, ${hours} Stunden und ${minutes} Minuten`;
+      }
+
+      setInterval(updateCountdown, 1000);
+
+      // Anzeige des Benutzeragenten
+      userAgentElement.textContent = `Benutzeragent: ${navigator.userAgent}`;
+    });
+  </script>
+</body>
+</html>
