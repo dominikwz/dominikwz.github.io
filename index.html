@@ -15,8 +15,28 @@
       background-size: cover;
       display: flex;
       justify-content: center;
-      align-items: center;
-      position: relative;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .header-title {
+      color: #2b7a3b;
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 10px;
     }
 
     .form-container {
@@ -24,9 +44,10 @@
       padding: 20px 30px;
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      max-width: 400px;
+      max-width: 500px;
       width: 100%;
       text-align: center;
+      margin: 0 auto;
     }
 
     .form-title {
@@ -122,9 +143,55 @@
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
+
+    .info-section {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-section h3 {
+      color: #2b7a3b;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .info-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-section ul li {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .info-section ul li strong {
+      color: #2b7a3b;
+    }
   </style>
 </head>
 <body>
+  <div class="header">
+    <img src="banner.jpg" alt="E-Bike Rallye Banner">
+    <div class="header-title">Willkommen zur E-Bike Rallye!</div>
+  </div>
+
+  <div class="info-section">
+    <h3>Informationen zur Rallye</h3>
+    <ul>
+      <li><strong>Datum:</strong> Samstag, 6. Juli 2024</li>
+      <li><strong>Ort:</strong> Start und Ziel im Stadtpark Musterstadt</li>
+      <li><strong>Strecke:</strong> 25 km durch malerische Landschaften</li>
+      <li><strong>Highlights:</strong> Verpflegungsstationen, Fotowettbewerb und Preise für die Gewinner</li>
+      <li><strong>Teilnahmebedingungen:</strong> Mindestalter 18 Jahre, eigene Ausrüstung oder Leih-E-Bike</li>
+    </ul>
+  </div>
+
   <div class="form-container">
     <div class="form-title">E-Bike Rallye Anmeldung</div>
     <form id="registrationForm">
@@ -181,46 +248,4 @@
         }
 
         const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
-        const seconds = Math.floor((timeRemaining / 1000) % 60);
-
-        countdownElement.textContent = `Anmeldeschluss in: ${days} Tage, ${hours} Stunden, ${minutes} Minuten, ${seconds} Sekunden`;
-      }
-
-      function displayUserAgent() {
-        const userAgent = navigator.userAgent;
-        const isMobile = /Mobile|Android|iP(hone|od|ad)/.test(userAgent) ? "Mobiles Gerät" : "Desktop";
-        userAgentElement.textContent = `User Agent: ${userAgent} | Gerät: ${isMobile}`;
-      }
-
-      // Initiale Berechnung und Intervall setzen
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-
-      // Anzeige des User Agents
-      displayUserAgent();
-    });
-
-    document.getElementById("registrationForm").addEventListener("submit", (e) => {
-      e.preventDefault(); // Verhindert das normale Abschicken des Formulars
-
-      const form = e.target;
-      if (form.checkValidity()) {
-        // Erfolgreichmeldung anzeigen
-        const isConfirmed = confirm(
-          "Anmeldung erfolgreich! Möchten Sie die Sicherheitsvorkehrungen und die Packliste als PDFs herunterladen?"
-        );
-
-        // Falls der Benutzer zustimmt, die PDFs laden
-        if (isConfirmed) {
-          window.open("sicherheitsvorkehrungen.pdf", "_blank");
-          window.open("packliste.pdf", "_blank");
-        }
-      } else {
-        alert("Bitte füllen Sie alle Pflichtfelder aus.");
-      }
-    });
-  </script>
-</body>
-</html>
+        const hours = Math.floor((timeRemaining / (1000 * 60 *
