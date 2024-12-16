@@ -12,7 +12,7 @@
       background: url('banner.jpg') no-repeat center center fixed;
       background-size: cover;
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       flex-direction: column;
       padding: 20px;
@@ -20,7 +20,7 @@
     }
 
     .header-title {
-      color: #ffffff;
+      color: #2b7a3b;
       font-size: 32px;
       font-weight: bold;
       margin-top: 20px;
@@ -28,15 +28,49 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
-    .form-container {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 20px 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
+    .main-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+      gap: 20px;
       width: 100%;
-      text-align: center;
-      margin: 20px auto 0 auto;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .info-section, .form-container {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-section h3 {
+      color: #2b7a3b;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .info-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-section ul li {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .info-section ul li strong {
+      color: #2b7a3b;
     }
 
     .form-title {
@@ -44,6 +78,7 @@
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     .form-group {
@@ -120,88 +155,60 @@
       color: #777;
       margin-top: 10px;
     }
-
-    .info-section {
-      max-width: 600px;
-      margin: 20px auto;
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .info-section h3 {
-      color: #2b7a3b;
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .info-section ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .info-section ul li {
-      margin: 5px 0;
-      font-size: 14px;
-      color: #333;
-    }
-
-    .info-section ul li strong {
-      color: #2b7a3b;
-    }
   </style>
 </head>
 <body>
   <div class="header-title">Willkommen zur E-Bike Rallye!</div>
 
-  <div class="info-section">
-    <h3>Informationen zur Rallye</h3>
-    <ul>
-      <li><strong>Datum:</strong> Samstag, 6. Juli 2024</li>
-      <li><strong>Ort:</strong> Start und Ziel im Stadtpark Musterstadt</li>
-      <li><strong>Strecke:</strong> 25 km durch malerische Landschaften</li>
-      <li><strong>Highlights:</strong> Verpflegungsstationen, Fotowettbewerb und Preise für die Gewinner</li>
-      <li><strong>Teilnahmebedingungen:</strong> Mindestalter 18 Jahre, eigene Ausrüstung oder Leih-E-Bike</li>
-    </ul>
-  </div>
+  <div class="main-container">
+    <div class="info-section">
+      <h3>Informationen zur Rallye</h3>
+      <ul>
+        <li><strong>Datum:</strong> Samstag, 6. Juli 2024</li>
+        <li><strong>Ort:</strong> Start und Ziel im Stadtpark Musterstadt</li>
+        <li><strong>Strecke:</strong> 25 km durch malerische Landschaften</li>
+        <li><strong>Highlights:</strong> Verpflegungsstationen, Fotowettbewerb und Preise für die Gewinner</li>
+        <li><strong>Teilnahmebedingungen:</strong> Mindestalter 18 Jahre, eigene Ausrüstung oder Leih-E-Bike</li>
+      </ul>
+    </div>
 
-  <div class="form-container">
-    <div class="form-title">Anmeldung</div>
-    <form id="registrationForm">
-      <div class="form-group">
-        <label for="first-name">Vorname:</label>
-        <input type="text" id="first-name" name="first-name" required>
-      </div>
-      <div class="form-group">
-        <label for="last-name">Nachname:</label>
-        <input type="text" id="last-name" name="last-name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">E-Mail:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="birthdate">Geburtsdatum:</label>
-        <input type="date" id="birthdate" name="birthdate" required>
-      </div>
-      <div class="form-group">
-        <label for="special-requests">Sonderwünsche:</label>
-        <textarea id="special-requests" name="special-requests" rows="3" placeholder="Z. B. vegetarische Verpflegung oder Leih-E-Bike"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="notes">Anmerkungen:</label>
-        <textarea id="notes" name="notes" rows="3"></textarea>
-      </div>
-      <div class="form-footer">
-        <label class="checkbox-label">
-          <input type="checkbox" name="terms" required>
-          Ich akzeptiere die <a href="teilnahmebedingungen.pdf" target="_blank">Teilnahmebedingungen</a>.
-        </label>
-        <button type="submit" class="submit-btn">Jetzt Anmelden</button>
-        <div class="countdown">Anmeldeschluss wird berechnet...</div>
-      </div>
-    </form>
+    <div class="form-container">
+      <div class="form-title">E-Bike Rallye Anmeldung</div>
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="first-name">Vorname:</label>
+          <input type="text" id="first-name" name="first-name" required>
+        </div>
+        <div class="form-group">
+          <label for="last-name">Nachname:</label>
+          <input type="text" id="last-name" name="last-name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="birthdate">Geburtsdatum:</label>
+          <input type="date" id="birthdate" name="birthdate" required>
+        </div>
+        <div class="form-group">
+          <label for="special-requests">Sonderwünsche:</label>
+          <textarea id="special-requests" name="special-requests" rows="3" placeholder="Z. B. vegetarische Verpflegung oder Leih-E-Bike"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="notes">Anmerkungen:</label>
+          <textarea id="notes" name="notes" rows="3"></textarea>
+        </div>
+        <div class="form-footer">
+          <label class="checkbox-label">
+            <input type="checkbox" name="terms" required>
+            Ich akzeptiere die <a href="teilnahmebedingungen.pdf" target="_blank">Teilnahmebedingungen</a>.
+          </label>
+          <button type="submit" class="submit-btn">Jetzt Anmelden</button>
+          <div class="countdown">Anmeldeschluss wird berechnet...</div>
+        </div>
+      </form>
+    </div>
   </div>
 
   <script>
