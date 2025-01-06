@@ -17,6 +17,8 @@
       flex-direction: column;
       padding: 20px;
       box-sizing: border-box;
+      transform: scale(0.75); /* Verkleinert die Anzeige auf 75 % */
+      transform-origin: top left; /* Der Skalierungspunkt ist oben links */
     }
 
     .header-title {
@@ -155,7 +157,7 @@
 
     @media (max-width: 768px) {
       body {
-        padding: 10px;
+        transform: none; /* Keine Skalierung auf mobilen Geräten */
       }
 
       .header-title {
