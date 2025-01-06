@@ -13,7 +13,7 @@
       background-size: cover;
       display: flex;
       justify-content: center;
-      align-items: flex-start; /* Ausrichtung am oberen Rand */
+      align-items: flex-start;
       flex-direction: column;
       padding: 20px;
       box-sizing: border-box;
@@ -21,37 +21,32 @@
 
     .header-title {
       color: #ffffff;
-      font-size: clamp(28px, 5vw, 42px); /* Dynamische Schriftgröße */
+      font-size: clamp(28px, 5vw, 42px);
       font-weight: bold;
-      margin-top: 0px;
+      margin-bottom: 20px;
       text-align: center;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      width: 100%;
     }
 
     .main-container {
       display: flex;
-      flex-wrap: wrap;
-      flex-direction: column; /* Default: übereinander angeordnete Elemente */
-      justify-content: center;
-      align-items: center;
+      justify-content: space-between;
+      align-items: flex-start;
       gap: 20px;
       width: 100%;
       max-width: 1200px;
-      margin: 50px auto; /* Abstand nach oben hinzugefügt */
+      margin: 0 auto;
     }
 
     .info-section, .form-container {
       flex: 1;
       min-width: 300px;
-      max-width: 500px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      max-width: 48%;
       background-color: rgba(255, 255, 255, 0.9);
       padding: 15px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 100%; /* Füllt bei mobilen Geräten die Breite */
     }
 
     .info-section h3 {
@@ -154,35 +149,13 @@
     }
 
     @media (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
-
-      .header-title {
-        font-size: clamp(24px, 6vw, 32px);
-      }
-
       .main-container {
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
       }
 
       .info-section, .form-container {
-        width: 100%;
-        margin: 0 auto;
-      }
-
-      .form-footer .submit-btn {
-        font-size: 14px;
-        padding: 10px;
-      }
-
-      .form-group input, .form-group textarea {
-        font-size: 12px;
-      }
-
-      .countdown {
-        font-size: 10px;
+        max-width: 100%;
       }
     }
   </style>
@@ -244,7 +217,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const countdownElement = document.querySelector(".countdown");
-      const deadlineDate = new Date("2025-07-06T23:59:59"); // Anmeldeschluss-Datum
+      const deadlineDate = new Date("2025-07-06T23:59:59");
 
       function updateCountdown() {
         const now = new Date();
