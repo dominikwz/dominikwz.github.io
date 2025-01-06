@@ -9,30 +9,31 @@
       font-family: Arial, sans-serif;
       margin: 0;
       height: 100vh;
-      background: url('banner.jpg') no-repeat center top fixed;
+      background: url('banner.jpg') no-repeat center center fixed;
       background-size: cover;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       flex-direction: column;
       padding: 20px;
       box-sizing: border-box;
+      transform: scale(1); /* Verkleinert die Anzeige auf 75 % */
+      transform-origin: top left; /* Der Skalierungspunkt ist oben links */
     }
 
     .header-title {
       color: #ffffff;
-      font-size: clamp(28px, 5vw, 42px);
+      font-size: clamp(28px, 5vw, 42px); /* Dynamische Schriftgröße */
       font-weight: bold;
-      margin: 10px 0;
+      margin-top: 0px;
       text-align: center;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      width: 100%;
     }
 
     .main-container {
       display: flex;
       flex-wrap: wrap;
-      flex-direction: column;
+      flex-direction: column; /* Default: übereinander angeordnete Elemente */
       justify-content: center;
       align-items: center;
       gap: 20px;
@@ -43,23 +44,22 @@
 
     .info-section, .form-container {
       flex: 1;
-      min-width: 280px;
-      max-width: 400px;
+      min-width: 300px;
+      max-width: 500px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       background-color: rgba(255, 255, 255, 0.9);
-      padding: 10px;
+      padding: 15px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 100%;
+      width: 100%; /* Füllt bei mobilen Geräten die Breite */
     }
 
     .info-section h3 {
       color: #2b7a3b;
-      font-size: 22px;
+      font-size: 26px;
       margin-bottom: 10px;
-      text-align: center;
     }
 
     .info-section ul {
@@ -69,7 +69,7 @@
 
     .info-section ul li {
       margin: 5px 0;
-      font-size: 16px;
+      font-size: 20px;
       color: #333;
     }
 
@@ -79,30 +79,30 @@
 
     .form-title {
       color: #2b7a3b;
-      font-size: 20px;
+      font-size: 24px;
       font-weight: bold;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       text-align: center;
     }
 
     .form-group {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       text-align: left;
     }
 
     .form-group label {
       display: block;
-      font-size: 12px;
+      font-size: 14px;
       margin-bottom: 5px;
       color: #333;
     }
 
     .form-group input, .form-group textarea {
       width: 100%;
-      padding: 8px;
+      padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      font-size: 12px;
+      font-size: 14px;
       box-sizing: border-box;
     }
 
@@ -111,12 +111,12 @@
     }
 
     .form-footer {
-      margin-top: 10px;
+      margin-top: 15px;
       text-align: left;
     }
 
     .form-footer .checkbox-label {
-      font-size: 12px;
+      font-size: 14px;
       color: #555;
       display: flex;
       align-items: center;
@@ -136,13 +136,13 @@
       background-color: #B44343;
       color: white;
       border: none;
-      padding: 10px 15px;
-      font-size: 14px;
+      padding: 12px 20px;
+      font-size: 16px;
       font-weight: bold;
       border-radius: 5px;
       cursor: pointer;
       width: 100%;
-      margin-top: 5px;
+      margin-top: 10px;
     }
 
     .form-footer .submit-btn:hover {
@@ -150,14 +150,14 @@
     }
 
     .countdown {
-      font-size: 10px;
+      font-size: 12px;
       color: #777;
-      margin-top: 5px;
+      margin-top: 10px;
     }
 
     @media (max-width: 768px) {
       body {
-        padding: 10px;
+        transform: none; /* Keine Skalierung auf mobilen Geräten */
       }
 
       .header-title {
@@ -175,8 +175,8 @@
       }
 
       .form-footer .submit-btn {
-        font-size: 12px;
-        padding: 8px;
+        font-size: 14px;
+        padding: 10px;
       }
 
       .form-group input, .form-group textarea {
@@ -199,8 +199,8 @@
         <li><strong>Datum:</strong> Samstag, 6. Juli 2024</li>
         <li><strong>Ort:</strong> Start und Ziel im Stadtpark Musterstadt</li>
         <li><strong>Strecke:</strong> 25 km durch malerische Landschaften</li>
-        <li><strong>Highlights:</strong> Verpflegungsstationen, Fotowettbewerb und Preise</li>
-        <li><strong>Teilnahmebedingungen:</strong> Mindestalter 18 Jahre</li>
+        <li><strong>Highlights:</strong> Verpflegungsstationen, Fotowettbewerb und Preise für die Gewinner</li>
+        <li><strong>Teilnahmebedingungen:</strong> Mindestalter 18 Jahre, eigene Ausrüstung oder Leih-E-Bike</li>
       </ul>
     </div>
 
@@ -225,7 +225,7 @@
         </div>
         <div class="form-group">
           <label for="special-requests">Sonderwünsche:</label>
-          <textarea id="special-requests" name="special-requests" rows="3" placeholder="Vegetarische Verpflegung"></textarea>
+          <textarea id="special-requests" name="special-requests" rows="3" placeholder="Z. B. vegetarische Verpflegung oder Leih-E-Bike"></textarea>
         </div>
         <div class="form-group">
           <label for="notes">Anmerkungen:</label>
@@ -246,7 +246,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const countdownElement = document.querySelector(".countdown");
-      const deadlineDate = new Date("2025-07-06T23:59:59");
+      const deadlineDate = new Date("2025-07-06T23:59:59"); // Anmeldeschluss-Datum
 
       function updateCountdown() {
         const now = new Date();
