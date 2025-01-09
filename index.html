@@ -148,40 +148,59 @@
       margin-top: 10px;
     }
 
-    .success-message {
-      display: none;
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .modal.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
       text-align: center;
-      margin-top: 20px;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-content h2 {
+      margin-bottom: 15px;
       color: #2b7a3b;
-      font-size: 18px;
+    }
+
+    .modal-content a {
+      color: #B44343;
       font-weight: bold;
-    }
-
-    .pdf-link {
-      display: none;
-      text-align: center;
-      margin-top: 10px;
-      font-size: 16px;
-    }
-
-    .pdf-link a {
-      color: #007bff;
       text-decoration: none;
     }
 
-    .pdf-link a:hover {
-      text-decoration: underline;
+    .modal-content button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #B44343;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
-    @media (max-width: 768px) {
-      .main-container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .info-section, .form-container {
-        max-width: 100%;
-      }
+    .modal-content button:hover {
+      background-color: #D56E6C;
     }
   </style>
 </head>
@@ -236,21 +255,24 @@
           <div class="countdown">Anmeldeschluss wird berechnet...</div>
         </div>
       </form>
-      <div class="success-message" id="successMessage">Vielen Dank für Ihre Anmeldung!</div>
-      <div class="pdf-link" id="pdfLink">
-        <a href="packliste.pdf" download>Klicken Sie hier, um die Packliste herunterzuladen</a>
-      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="successModal">
+    <div class="modal-content">
+      <h2>Erfolgreich angemeldet!</h2>
+      <p>Möchten Sie die Packliste herunterladen?</p>
+      <a href="packliste.pdf" download>Klicke hier, um die Packliste herunterzuladen.</a>
+      <button onclick="closeModal()">Schließen</button>
     </div>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const countdownElement = document.querySelector(".countdown");
-      const form = document.getElementById("registrationForm");
-      const successMessage = document.getElementById("successMessage");
-      const pdfLink = document.getElementById("pdfLink");
-
       const deadlineDate = new Date("2025-07-06T23:59:59");
+      const form = document.getElementById("registrationForm");
+      const modal = document.getElementById("successModal");
 
       function updateCountdown() {
         const now = new Date();
@@ -268,15 +290,17 @@
         countdownElement.textContent = `Anmeldeschluss in: ${days} Tagen, ${hours} Stunden und ${minutes} Minuten`;
       }
 
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        successMessage.style.display = "block";
-        pdfLink.style.display = "block";
-      });
-
       setInterval(updateCountdown, 1000);
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        modal.classList.add("active");
+      });
     });
+
+    function closeModal() {
+      document.getElementById("successModal").classList.remove("active");
+    }
   </script>
 </body>
 </html>
