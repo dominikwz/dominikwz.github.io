@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_33e1c30b9757952fd5363da7c02dac6c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_33e1c30b9757952fd5363da7c02dac6c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_33e1c30b9757952fd5363da7c02dac6c = L.map(
+                "map_33e1c30b9757952fd5363da7c02dac6c",
+                {
+                    center: [51.1657, 7.0035],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 7,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c3a51f2744ca3e32822e1df76097d386 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_33e1c30b9757952fd5363da7c02dac6c);
+        
+    
+            var marker_2409987ffda26672cfcbda871d1e21ba = L.marker(
+                [50.1109, 8.6821],
+                {}
+            ).addTo(map_33e1c30b9757952fd5363da7c02dac6c);
+        
+    
+            var icon_4a69197cc5cc6012a34ec82251b5d614 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2409987ffda26672cfcbda871d1e21ba.setIcon(icon_4a69197cc5cc6012a34ec82251b5d614);
+        
+    
+        var popup_f2696455d781806727c61a66fa94fdb0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_98e79d90178545c9e22fadae9704c01d = $(`<div id="html_98e79d90178545c9e22fadae9704c01d" style="width: 100.0%; height: 100.0%;">Frankfurt am Main</div>`)[0];
+            popup_f2696455d781806727c61a66fa94fdb0.setContent(html_98e79d90178545c9e22fadae9704c01d);
+        
+
+        marker_2409987ffda26672cfcbda871d1e21ba.bindPopup(popup_f2696455d781806727c61a66fa94fdb0)
+        ;
+
+        
+    
+    
+            var marker_07161745c691b67516d5b966445a60a0 = L.marker(
+                [49.9929, 8.2473],
+                {}
+            ).addTo(map_33e1c30b9757952fd5363da7c02dac6c);
+        
+    
+            var icon_e6ed1785be32b7ca6aba9e609a1ed745 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_07161745c691b67516d5b966445a60a0.setIcon(icon_e6ed1785be32b7ca6aba9e609a1ed745);
+        
+    
+        var popup_27ec5a33e8b6bf028c56ae0b9ed46496 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_991efd0082ec29b9bd808c82ef03d136 = $(`<div id="html_991efd0082ec29b9bd808c82ef03d136" style="width: 100.0%; height: 100.0%;">Mainz</div>`)[0];
+            popup_27ec5a33e8b6bf028c56ae0b9ed46496.setContent(html_991efd0082ec29b9bd808c82ef03d136);
+        
+
+        marker_07161745c691b67516d5b966445a60a0.bindPopup(popup_27ec5a33e8b6bf028c56ae0b9ed46496)
+        ;
+
+        
+    
+    
+            var marker_187a5c8cdce58a5b88d7460bc3ca0f6e = L.marker(
+                [50.9375, 6.9603],
+                {}
+            ).addTo(map_33e1c30b9757952fd5363da7c02dac6c);
+        
+    
+            var icon_5954be021af0e4575a3f96650f6a0d33 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_187a5c8cdce58a5b88d7460bc3ca0f6e.setIcon(icon_5954be021af0e4575a3f96650f6a0d33);
+        
+    
+        var popup_6c22e4487ad368feb17d17a95a2a409c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bf7161bd820d0d177b520d4550056747 = $(`<div id="html_bf7161bd820d0d177b520d4550056747" style="width: 100.0%; height: 100.0%;">Cologne</div>`)[0];
+            popup_6c22e4487ad368feb17d17a95a2a409c.setContent(html_bf7161bd820d0d177b520d4550056747);
+        
+
+        marker_187a5c8cdce58a5b88d7460bc3ca0f6e.bindPopup(popup_6c22e4487ad368feb17d17a95a2a409c)
+        ;
+
+        
+    
+    
+            var marker_73f759d8b48f28e4f1e18bd9feeddb4e = L.marker(
+                [51.4344, 6.7623],
+                {}
+            ).addTo(map_33e1c30b9757952fd5363da7c02dac6c);
+        
+    
+            var icon_cc3f1145c1dff6db83674fccc910d4bd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_73f759d8b48f28e4f1e18bd9feeddb4e.setIcon(icon_cc3f1145c1dff6db83674fccc910d4bd);
+        
+    
+        var popup_0da9baa1ea030c84a718dbf2c0ca2632 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7cbbf0b250597c607d45bb94dc42c6b4 = $(`<div id="html_7cbbf0b250597c607d45bb94dc42c6b4" style="width: 100.0%; height: 100.0%;">Duisburg</div>`)[0];
+            popup_0da9baa1ea030c84a718dbf2c0ca2632.setContent(html_7cbbf0b250597c607d45bb94dc42c6b4);
+        
+
+        marker_73f759d8b48f28e4f1e18bd9feeddb4e.bindPopup(popup_0da9baa1ea030c84a718dbf2c0ca2632)
+        ;
+
+        
+    
+    
+            var marker_4e77c4de7ad82e8182966615b2644685 = L.marker(
+                [51.9851, 5.8987],
+                {}
+            ).addTo(map_33e1c30b9757952fd5363da7c02dac6c);
+        
+    
+            var icon_a17a1e6860a38511edf0acc0fc099016 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4e77c4de7ad82e8182966615b2644685.setIcon(icon_a17a1e6860a38511edf0acc0fc099016);
+        
+    
+        var popup_eba3a34f4c2d2aa2b7a788e3cfba42e5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_446be580452b5b4dccf87277ab599754 = $(`<div id="html_446be580452b5b4dccf87277ab599754" style="width: 100.0%; height: 100.0%;">Arnhem</div>`)[0];
+            popup_eba3a34f4c2d2aa2b7a788e3cfba42e5.setContent(html_446be580452b5b4dccf87277ab599754);
+        
+
+        marker_4e77c4de7ad82e8182966615b2644685.bindPopup(popup_eba3a34f4c2d2aa2b7a788e3cfba42e5)
+        ;
+
+        
+    
+    
+            var marker_76ab9e77fa4ae21f46f87caa12b79163 = L.marker(
+                [52.0907, 5.1214],
+                {}
+            ).addTo(map_33e1c30b9757952fd5363da7c02dac6c);
+        
+    
+            var icon_33fdf9d71b1e37d06323e73ae3122dfd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_76ab9e77fa4ae21f46f87caa12b79163.setIcon(icon_33fdf9d71b1e37d06323e73ae3122dfd);
+        
+    
+        var popup_91211c8136fad944cf65eb6bd5da93f5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5fc0b8c6070e1e29dc1b80b0ab72904e = $(`<div id="html_5fc0b8c6070e1e29dc1b80b0ab72904e" style="width: 100.0%; height: 100.0%;">Utrecht</div>`)[0];
+            popup_91211c8136fad944cf65eb6bd5da93f5.setContent(html_5fc0b8c6070e1e29dc1b80b0ab72904e);
+        
+
+        marker_76ab9e77fa4ae21f46f87caa12b79163.bindPopup(popup_91211c8136fad944cf65eb6bd5da93f5)
+        ;
+
+        
+    
+    
+            var marker_5f869f9f89e9f47219f4d50648397b77 = L.marker(
+                [52.3676, 4.9041],
+                {}
+            ).addTo(map_33e1c30b9757952fd5363da7c02dac6c);
+        
+    
+            var icon_0a88024cc79dc54dbe3e8df1f3a0f781 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5f869f9f89e9f47219f4d50648397b77.setIcon(icon_0a88024cc79dc54dbe3e8df1f3a0f781);
+        
+    
+        var popup_6707051c0d0a315884cee8de89012ca3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2386ecccbb7a8fe668e12d3a5a53a261 = $(`<div id="html_2386ecccbb7a8fe668e12d3a5a53a261" style="width: 100.0%; height: 100.0%;">Amsterdam</div>`)[0];
+            popup_6707051c0d0a315884cee8de89012ca3.setContent(html_2386ecccbb7a8fe668e12d3a5a53a261);
+        
+
+        marker_5f869f9f89e9f47219f4d50648397b77.bindPopup(popup_6707051c0d0a315884cee8de89012ca3)
+        ;
+
+        
+    
+    
+            var poly_line_7530ca357fd15c160252a1c09ae52cd1 = L.polyline(
+                [[50.1109, 8.6821], [49.9929, 8.2473], [50.9375, 6.9603], [51.4344, 6.7623], [51.9851, 5.8987], [52.0907, 5.1214], [52.3676, 4.9041]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_33e1c30b9757952fd5363da7c02dac6c);
+        
+    
+            var marker_0be538d1df40398ae2684f4d01cc8448 = L.marker(
+                [49.9832, 8.2562],
+                {}
+            ).addTo(map_33e1c30b9757952fd5363da7c02dac6c);
+        
+    
+            var icon_e9902049384646c5681fb011775ad1cd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_0be538d1df40398ae2684f4d01cc8448.setIcon(icon_e9902049384646c5681fb011775ad1cd);
+        
+    
+        var popup_d2f574e182cf89194a71d4a326d7c479 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_93f915cc2e0713b90587aa0bb5a7c882 = $(`<div id="html_93f915cc2e0713b90587aa0bb5a7c882" style="width: 100.0%; height: 100.0%;">Campingplatz Mainz</div>`)[0];
+            popup_d2f574e182cf89194a71d4a326d7c479.setContent(html_93f915cc2e0713b90587aa0bb5a7c882);
+        
+
+        marker_0be538d1df40398ae2684f4d01cc8448.bindPopup(popup_d2f574e182cf89194a71d4a326d7c479)
+        ;
+
+        
+    
+    
+            var marker_39b388e9a2cb0ad1e32bfb7f97b20e52 = L.marker(
+                [50.9343, 6.9627],
+                {}
+            ).addTo(map_33e1c30b9757952fd5363da7c02dac6c);
+        
+    
+            var icon_9049cbb4a0b055b62dc615dbfe44ad6b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_39b388e9a2cb0ad1e32bfb7f97b20e52.setIcon(icon_9049cbb4a0b055b62dc615dbfe44ad6b);
+        
+    
+        var popup_35e6520bba46f62fd4de01401cc5760b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6b636ab5381080aa737a8ac553971238 = $(`<div id="html_6b636ab5381080aa737a8ac553971238" style="width: 100.0%; height: 100.0%;">Jugendherberge Köln</div>`)[0];
+            popup_35e6520bba46f62fd4de01401cc5760b.setContent(html_6b636ab5381080aa737a8ac553971238);
+        
+
+        marker_39b388e9a2cb0ad1e32bfb7f97b20e52.bindPopup(popup_35e6520bba46f62fd4de01401cc5760b)
+        ;
+
+        
+    
+    
+            var marker_6f84f0f29a05e72c6a1178b4c5b4bc61 = L.marker(
+                [51.9765, 5.9014],
+                {}
+            ).addTo(map_33e1c30b9757952fd5363da7c02dac6c);
+        
+    
+            var icon_1f5dec86b3c6a258472cfea69cc4896a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6f84f0f29a05e72c6a1178b4c5b4bc61.setIcon(icon_1f5dec86b3c6a258472cfea69cc4896a);
+        
+    
+        var popup_c725951ef5a80cc55e00bc0d0847a9d6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9a3273fdaf15535c8b53fddc1eadaa30 = $(`<div id="html_9a3273fdaf15535c8b53fddc1eadaa30" style="width: 100.0%; height: 100.0%;">Camping Roland, Arnhem</div>`)[0];
+            popup_c725951ef5a80cc55e00bc0d0847a9d6.setContent(html_9a3273fdaf15535c8b53fddc1eadaa30);
+        
+
+        marker_6f84f0f29a05e72c6a1178b4c5b4bc61.bindPopup(popup_c725951ef5a80cc55e00bc0d0847a9d6)
+        ;
+
+        
+    
+    
+            var marker_8db69f9c0059ca940d7a083521c9e233 = L.marker(
+                [52.3626, 4.9715],
+                {}
+            ).addTo(map_33e1c30b9757952fd5363da7c02dac6c);
+        
+    
+            var icon_4736fc1e7c2eb8bdaf58df4fd3f1bc37 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8db69f9c0059ca940d7a083521c9e233.setIcon(icon_4736fc1e7c2eb8bdaf58df4fd3f1bc37);
+        
+    
+        var popup_1bd8b6b82413b9be88d41491efa4d6c1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_71ad4bc3c75e9c780761333eebd8ca04 = $(`<div id="html_71ad4bc3c75e9c780761333eebd8ca04" style="width: 100.0%; height: 100.0%;">Camping Zeeburg, Amsterdam</div>`)[0];
+            popup_1bd8b6b82413b9be88d41491efa4d6c1.setContent(html_71ad4bc3c75e9c780761333eebd8ca04);
+        
+
+        marker_8db69f9c0059ca940d7a083521c9e233.bindPopup(popup_1bd8b6b82413b9be88d41491efa4d6c1)
+        ;
+
+        
+    
+</script>
+</html>
